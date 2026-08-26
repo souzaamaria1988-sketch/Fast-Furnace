@@ -13,8 +13,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class InstantFurnaceTickMixin {
 
     @Inject(
-            method = "tick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/entity/AbstractFurnaceBlockEntity;)V",
-            at = @At("HEAD")
+            // method_31651 = tick em AbstractFurnaceBlockEntity
+            method = "method_31651",
+            at = @At("HEAD"),
+            remap = false
     )
     private static void instantFurnace$forceInstant(
             World world,
@@ -29,8 +31,11 @@ public abstract class InstantFurnaceTickMixin {
 
         AbstractFurnaceBlockEntityAccessor accessor = (AbstractFurnaceBlockEntityAccessor) furnace;
 
-        // Faz a fornalha cozinhar em 1 tick.
+        // Faz a fornalha cozinhar em 1 tick (instantâneo).
         accessor.instantFurnace$setCookTimeTotal(1);
         accessor.instantFurnace$setCookTime(0);
+        
+        // OPCIONAL: Se quiser que funcione SEM combustível, descomente a linha abaixo:
+        // accessor.instantFurnace$setBurnTime(200);
     }
 }
