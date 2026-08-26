@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "instantfurnace",
+  "version": "${version}",
+  "name": "Instant Furnace",
+  "description": "Deixa a fornalha instantânea no Minecraft Fabric 1.17.1.",
+  "authors": [
+    "SeuNome"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [
+    "instantfurnace.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "minecraft": "1.17.1",
+    "java": ">=16"
+  }
+}
