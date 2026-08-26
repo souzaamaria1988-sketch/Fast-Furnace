@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.example.instantfurnace.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "AbstractFurnaceBlockEntityAccessor",
+    "InstantFurnaceTickMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "instantfurnace.refmap.json"
+}
