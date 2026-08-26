@@ -9,6 +9,7 @@
   ],
   "contact": {},
   "license": "MIT",
+  "icon": "assets/instantfurnace/icon.png",
   "environment": "*",
   "entrypoints": {},
   "mixins": [
