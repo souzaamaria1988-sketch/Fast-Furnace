@@ -1,12 +1,15 @@
-name: build
+name: release
 
 on:
   push:
-  pull_request:
-  workflow_dispatch:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,8 +30,18 @@ jobs:
       - name: Build do mod
         run: gradle build --no-daemon --stacktrace
 
-      - name: Enviar artefato do mod
-        uses: actions/upload-artifact@v4
+      - name: Remover jar de fontes, se existir
+        run: rm -f build/libs/*-sources.jar
+
+      - name: Criar Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: instantfurnace-1.17.1
-          path: build/libs/*.jar
+          tag_name: ${{ github.ref_name }}
+          name: Instant Furnace ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: |
+            build/libs/*.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
