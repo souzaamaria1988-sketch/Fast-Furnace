@@ -7,13 +7,15 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(AbstractFurnaceBlockEntity.class)
 public interface AbstractFurnaceBlockEntityAccessor {
 
-    @Accessor("cookTime")
+    // field_11989 é o nome interno de cookTime
+    @Accessor(value = "field_11989", remap = false)
     void instantFurnace$setCookTime(int value);
 
-    @Accessor("cookTimeTotal")
+    // field_11988 é o nome interno de cookTimeTotal
+    @Accessor(value = "field_11988", remap = false)
     void instantFurnace$setCookTimeTotal(int value);
 
-    // Na 1.17.1 o nome correto é burnTime, e não litTime!
-    @Accessor("burnTime")
+    // field_11981 é o nome interno de burnTime
+    @Accessor(value = "field_11981", remap = false)
     void instantFurnace$setBurnTime(int value);
 }
