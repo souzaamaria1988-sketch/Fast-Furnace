@@ -13,6 +13,7 @@ public interface AbstractFurnaceBlockEntityAccessor {
     @Accessor("cookTimeTotal")
     void instantFurnace$setCookTimeTotal(int value);
 
-    @Accessor("litTime")
-    void instantFurnace$setLitTime(int value);
+    // Na 1.17.1 o nome correto é burnTime, e não litTime!
+    @Accessor("burnTime")
+    void instantFurnace$setBurnTime(int value);
 }
