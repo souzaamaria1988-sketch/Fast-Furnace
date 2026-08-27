@@ -36,6 +36,8 @@ public abstract class InstantFurnaceTickMixin {
         // Se quiser que funcione SEM combustível, descomente a linha abaixo:
         // accessor.instantFurnace$setLitTime(200);
     }
+}        // accessor.instantFurnace$setLitTime(200);
+    }
 }        
         // OPCIONAL: Se quiser que funcione SEM combustível, descomente a linha abaixo:
         // accessor.instantFurnace$setBurnTime(200);
