@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(AbstractFurnaceBlockEntity.class)
 public interface AbstractFurnaceBlockEntityAccessor {
 
-    // Usa cookTime para compilar, e field_11989 como fallback no celular
     @Accessor(value = "cookTime", aliases = "field_11989")
     void instantFurnace$setCookTime(int value);
 
