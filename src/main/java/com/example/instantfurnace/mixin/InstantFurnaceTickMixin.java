@@ -29,17 +29,7 @@ public abstract class InstantFurnaceTickMixin {
 
         AbstractFurnaceBlockEntityAccessor accessor = (AbstractFurnaceBlockEntityAccessor) furnace;
 
-        // Faz a fornalha cozinhar em 1 tick (instantâneo).
         accessor.instantFurnace$setCookTimeTotal(1);
         accessor.instantFurnace$setCookTime(0);
-        
-        // Se quiser que funcione SEM combustível, descomente a linha abaixo:
-        // accessor.instantFurnace$setLitTime(200);
     }
-}        // accessor.instantFurnace$setLitTime(200);
-    }
-}        
-        // OPCIONAL: Se quiser que funcione SEM combustível, descomente a linha abaixo:
-        // accessor.instantFurnace$setBurnTime(200);
-    }
-}
+} 
