@@ -7,15 +7,13 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(AbstractFurnaceBlockEntity.class)
 public interface AbstractFurnaceBlockEntityAccessor {
 
-    // field_11989 é o nome interno de cookTime
-    @Accessor(value = "field_11989", remap = false)
+    // Usa cookTime para compilar, e field_11989 como fallback no celular
+    @Accessor(value = "cookTime", aliases = "field_11989")
     void instantFurnace$setCookTime(int value);
 
-    // field_11988 é o nome interno de cookTimeTotal
-    @Accessor(value = "field_11988", remap = false)
+    @Accessor(value = "cookTimeTotal", aliases = "field_11988")
     void instantFurnace$setCookTimeTotal(int value);
 
-    // field_11981 é o nome interno de burnTime
-    @Accessor(value = "field_11981", remap = false)
+    @Accessor(value = "burnTime", aliases = "field_11981")
     void instantFurnace$setBurnTime(int value);
 }
