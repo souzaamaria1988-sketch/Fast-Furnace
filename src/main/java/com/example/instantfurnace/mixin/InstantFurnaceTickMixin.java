@@ -32,4 +32,4 @@ public abstract class InstantFurnaceTickMixin {
         accessor.instantFurnace$setCookTimeTotal(1);
         accessor.instantFurnace$setCookTime(0);
     }
-} 
+}
