@@ -40,10 +40,3 @@ tasks.withType(JavaCompile).configureEach {
 java {
     withSourcesJar()
 }
-
-// Força o Loom a gerar o refmap corretamente para não crashar no celular
-sourceSets {
-    main {
-        ext.refMap = "instantfurnace.refmap.json"
-    }
-} 
