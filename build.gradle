@@ -40,10 +40,3 @@ tasks.withType(JavaCompile).configureEach {
 java {
     withSourcesJar()
 }
-
-// CONFIGURAÇÃO MÁGICA PARA O REFMAP FUNCIONAR NO CELULAR
-loom {
-    mixin {
-        defaultRefmapName = "instantfurnace.refmap.json"
-    }
-}
